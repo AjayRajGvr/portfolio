@@ -26,11 +26,7 @@ const navItems = [
   <header class="top-nav">
     <a href="#top" class="wordmark">{siteConfig.name}</a>
     <nav aria-label="Primary">
-      {
-        navItems.map((item) => (
-          <a href={item.href}>{item.label}</a>
-        ))
-      }
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
     </nav>
   </header>
 
@@ -42,7 +38,5 @@ const navItems = [
     <ContactSection site={siteConfig} />
   </main>
 
-  <footer class="site-footer">
-    <p>Thank you for visiting!</p>
-  </footer>
+  <footer class="site-footer"></footer>
 </BaseLayout>

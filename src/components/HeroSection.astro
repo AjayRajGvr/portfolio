@@ -20,7 +20,10 @@ function withBase(href: string) {
 
 <section class="hero reveal" id="top" transition:name="hero">
   <p class="eyebrow">{site.role}</p>
-  <h1>{site.name}</h1>
+  <h1 class="hero-name" aria-label={site.name}>
+    <span class="hero-name-primary">AJAY </span>
+    <span class="hero-name-secondary">RAJ K</span>
+  </h1>
   <p class="lede">{site.tagline}</p>
 
   <div class="hero-meta">

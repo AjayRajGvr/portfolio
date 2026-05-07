@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap");
+
 :root {
   --font-heading: "Century Gothic", "Avenir Next", "Montserrat", sans-serif;
   --font-body: "Arial", "Roboto Condensed", "Helvetica Neue", sans-serif;
+  --font-paragraph: "Source Code Pro", "Courier New", Courier, monospace;
 
   --color-accent: var(--accent);
   --color-bg: var(--bg);
@@ -109,6 +112,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-heading);
+  color: #5b6973;
   line-height: 1.1;
   margin: 0;
 }
@@ -116,6 +120,18 @@ h3 {
 h1 {
   font-size: clamp(2rem, 4vw, 3.4rem);
   margin-top: var(--space-2);
+}
+
+h2 {
+  color: #424242;
+}
+
+.hero h1.hero-name .hero-name-primary {
+  color: #5b6973;
+}
+
+.hero h1.hero-name .hero-name-secondary {
+  color: var(--text, #111827);
 }
 
 .lede {
@@ -214,6 +230,14 @@ h1 {
   margin-bottom: 0;
 }
 
+#about .card p,
+#about .subtitle,
+#contact .subtitle,
+#experience,
+#projects {
+  font-family: var(--font-paragraph);
+}
+
 .card-header p {
   margin: var(--space-2) 0;
   color: var(--color-muted);
@@ -246,11 +270,7 @@ li {
   border-radius: 999px;
   border: 1px solid var(--color-border);
   padding: 0.36rem 0.65rem;
-  background: #f9fbff;
-}
-
-.project-card strong {
-  font-family: var(--font-heading);
+  background: #ebeff7;
 }
 
 .link-row {

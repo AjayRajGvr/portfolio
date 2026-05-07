@@ -1,0 +1,39 @@
+[
+  {
+    "company": "UST, Canada",
+    "title": "Lead Developer",
+    "period": "July 2023 - April 2026 (Full Time)",
+    "highlights": [
+      "Led development of the Albertsons Partner Portal, owning the shell application and a partner/vendor micro-frontend integrated into the platform.",
+      "Architected and developed core modules including user onboarding, notifications, announcements, case management, and a help center integrated with ServiceNow articles.",
+      "Designed dynamic micro-frontend onboarding and runtime loading strategies, integrating and managing nine independent MFEs within the shell.",
+      "Built and managed a GraphQL middleware layer to orchestrate backend services and simplify frontend data consumption.",
+      "Implemented Power BI embedded analytics and DocuSign integrations for in-app reporting, template customization, and automated envelope generation.",
+      "Led an offshore team of six developers while enforcing quality and security compliance through SonarQube and Veracode."
+    ],
+    "tech": ["React", "Next.js", "TypeScript", "GraphQL", "Micro-Frontends", "Power BI", "DocuSign"]
+  },
+  {
+    "company": "UST, India",
+    "title": "Frontend Developer",
+    "period": "February 2021 - July 2023 (Full Time)",
+    "highlights": [
+      "Developed enterprise applications for quality inspection, reporting, and warehouse shipping operations across Albertsons distribution centers.",
+      "Built scalable UI modules and reusable components using React, TypeScript, Redux, and Material UI for complex workflows and validations.",
+      "Designed dynamic dashboards, forms, and order management workflows while integrating backend APIs for updates and tracking.",
+      "Supported Azure Data Factory workflows for data transformation and synchronization between legacy Oracle systems and Azure SQL Server.",
+      "Contributed to CI/CD workflows, automated testing, and maintainability using Jest, React Testing Library, Jenkins, and Spinnaker."
+    ],
+    "tech": ["React", "TypeScript", "Redux", "Material UI", "Azure Data Factory", "Jest", "Jenkins", "Spinnaker"]
+  },
+  {
+    "company": "Freelance",
+    "title": "Full Stack Developer",
+    "period": "April 2019 - January 2021",
+    "highlights": [
+      "Developed and customized web applications and game platforms (Facebook instant games and HTML5 games) using JavaScript, React, and PHP.",
+      "Configured Linux-based VPS environments, deployments, and application hosting."
+    ],
+    "tech": ["JavaScript", "React.js", "Next.js", "PHP", "Linux"]
+  }
+]

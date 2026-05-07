@@ -1,0 +1,46 @@
+---
+import Section from "./Section.astro";
+import type { ProjectCard } from "../types/content";
+
+type Props = {
+  items: ProjectCard[];
+};
+
+const { items } = Astro.props;
+const featured = items.slice(0, 3);
+---
+
+<Section
+  id="projects"
+  title="Other Projects"
+  subtitle="Projects I've worked on outside of my professional experience"
+>
+  {
+    featured.length === 0 ? (
+      <div class="card">
+        <p>Featured projects will appear here shortly.</p>
+      </div>
+    ) : (
+      <div class="stack-grid">
+        {featured.map((project) => (
+          <article class="card project-card">
+            <h3>{project.title}</h3>
+            <p><strong>Problem:</strong> {project.problem}</p>
+            <p><strong>Solution:</strong> {project.solution}</p>
+            <p><strong>Result:</strong> {project.result}</p>
+            <p class="chip-row">
+              {project.stack.map((tech) => <span class="chip">{tech}</span>)}
+            </p>
+            {
+              project.links && project.links.length > 0 && (
+                <p class="link-row">
+                  {project.links.map((link) => <a href={link.href}>{link.label}</a>)}
+                </p>
+              )
+            }
+          </article>
+        ))}
+      </div>
+    )
+  }
+</Section>

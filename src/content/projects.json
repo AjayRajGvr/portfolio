@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "minimal-ytube",
+    "title": "Minimal YTube (Chrome Extension)",
+    "problem": "YouTube pages can be distraction-heavy and reduce focus on the currently playing video.",
+    "solution": "Built a Chrome extension to remove non-essential YouTube fields and keep attention on active content.",
+    "stack": ["JavaScript", "Chrome Extension"],
+    "result": "Created a focused viewing experience by minimizing visual distractions."
+  },
+  {
+    "slug": "secret-share",
+    "title": "Secret Share (Anonymous Messaging Platform)",
+    "problem": "Client needed a way to receive candid feedback through personalized links.",
+    "solution": "Built a web app for anonymous feedback with an admin dashboard, moderation controls, and multi-language support.",
+    "stack": ["JavaScript", "Next.js", "PostgreSQL"],
+    "result": "Enabled anonymous messaging workflows with manageable moderation and customizable admin controls."
+  }
+]

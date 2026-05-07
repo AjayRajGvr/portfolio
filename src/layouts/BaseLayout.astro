@@ -1,0 +1,78 @@
+---
+import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
+
+type Props = {
+  pageTitle?: string;
+  pageDescription?: string;
+  ogImage?: string;
+  siteName: string;
+  titleTemplate?: string;
+  theme: {
+    accent: string;
+    bg: string;
+    surface: string;
+    text: string;
+    textMuted: string;
+    border: string;
+  };
+};
+
+const {
+  pageTitle,
+  pageDescription,
+  ogImage,
+  siteName,
+  titleTemplate = "%s",
+  theme,
+} = Astro.props;
+
+const resolvedTitle = pageTitle ?? siteName;
+const title = titleTemplate.replace("%s", resolvedTitle);
+const description = pageDescription ?? "";
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString();
+const ogImageUrl = ogImage
+  ? new URL(ogImage, Astro.site ?? Astro.url).toString()
+  : undefined;
+const themeStyle = [
+  `--accent:${theme.accent}`,
+  `--bg:${theme.bg}`,
+  `--surface:${theme.surface}`,
+  `--text:${theme.text}`,
+  `--textMuted:${theme.textMuted}`,
+  `--border:${theme.border}`,
+].join(";");
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content={siteName} />
+    {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+
+    <ClientRouter fallback="animate" />
+
+  </head>
+  <body style={themeStyle}>
+    <slot />
+  </body>
+</html>

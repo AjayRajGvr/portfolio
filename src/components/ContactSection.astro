@@ -1,0 +1,29 @@
+---
+import Section from "./Section.astro";
+import type { SiteConfig } from "../types/content";
+
+type Props = {
+  site: SiteConfig;
+};
+
+const { site } = Astro.props;
+---
+
+<Section
+  id="contact"
+  title="Contact"
+  subtitle="Please get in touch via email or LinkedIn."
+>
+  <div class="card contact-card">
+    <p>
+      email: <a href={`mailto:${site.email}`}>{site.email}</a>
+    </p>
+    <div class="link-row">
+      {
+        site.socialLinks.map((link) => (
+          <a href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+        ))
+      }
+    </div>
+  </div>
+</Section>

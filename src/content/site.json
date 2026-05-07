@@ -1,0 +1,44 @@
+{
+  "name": "Ajay Raj K",
+  "role": "Senior Frontend Engineer",
+  "tagline": "Problem solver with a passion for craftsmanship.",
+  "location": "Vancouver, BC",
+  "email": "ajayrajkollath@gmail.com",
+  "website": "https://ajayraj.ca",
+  "ctaLinks": [
+    {
+      "label": "View Resume",
+      "href": "/Ajay-Raj-Resume.pdf",
+      "variant": "secondary"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact",
+      "variant": "secondary"
+    }
+  ],
+  "socialLinks": [
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/ajayrajkollath/"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/AjayRajGvr"
+    }
+  ],
+  "seo": {
+    "title": "Senior Frontend / React / Full-Stack Developer",
+    "titleTemplate": "%s | Ajay Raj",
+    "description": "Senior Frontend Engineer with 5+ years of experience building enterprise-scale web applications using React, Next, TypeScript, GraphQL and Micro-Frontend architecture.",
+    "ogImage": "/images/og-card.svg"
+  },
+  "themeTokens": {
+    "accent": "#1f5fa9",
+    "bg": "#f6f8fb",
+    "surface": "#ffffff",
+    "text": "#111827",
+    "textMuted": "#4b5563",
+    "border": "#d7dde7"
+  }
+}

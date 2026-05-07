@@ -1,0 +1,40 @@
+---
+import Section from "./Section.astro";
+import type { ExperienceHighlight } from "../types/content";
+
+type Props = {
+  items: ExperienceHighlight[];
+};
+
+const { items } = Astro.props;
+---
+
+<Section
+  id="experience"
+  title="Professional Experience"
+  subtitle="I handled multiple roles across Frontend, Backend, Architecture, and Team leadership based on project needs."
+>
+  <div class="stack-grid">
+    {
+      items.map((item) => (
+        <article class="card">
+          <div class="card-header">
+            <h3>{item.title}</h3>
+            <p>{item.company}</p>
+            <p class="muted">{item.period}</p>
+          </div>
+          <ul>
+            {item.highlights.map((point) => (
+              <li>{point}</li>
+            ))}
+          </ul>
+          <p class="chip-row">
+            {item.tech.map((tech) => (
+              <span class="chip">{tech}</span>
+            ))}
+          </p>
+        </article>
+      ))
+    }
+  </div>
+</Section>

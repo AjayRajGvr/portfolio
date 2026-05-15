@@ -25,9 +25,31 @@ const navItems = [
 >
   <header class="top-nav">
     <a href="#top" class="wordmark">{siteConfig.name}</a>
-    <nav aria-label="Primary">
-      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
-    </nav>
+    <div class="top-nav-controls">
+      <nav aria-label="Primary">
+        {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      </nav>
+      <div class="theme-toggle" role="group" aria-label="Theme selector">
+        <button type="button" data-theme-option="light" aria-pressed="false" aria-label="Light theme" title="Light theme">
+          <span aria-hidden="true">☀</span>
+          <span class="sr-only">Light</span>
+        </button>
+        <button type="button" data-theme-option="dark" aria-pressed="false" aria-label="Dark theme" title="Dark theme">
+          <span aria-hidden="true">🌙</span>
+          <span class="sr-only">Dark</span>
+        </button>
+        <button
+          type="button"
+          data-theme-option="colorful"
+          aria-pressed="false"
+          aria-label="Colorful theme"
+          title="Colorful theme"
+        >
+          <span aria-hidden="true">🎨</span>
+          <span class="sr-only">Colorful</span>
+        </button>
+      </div>
+    </div>
   </header>
 
   <main class="container">
@@ -39,4 +61,46 @@ const navItems = [
   </main>
 
   <footer class="site-footer"></footer>
+
+  <script is:inline>
+    (() => {
+      const validThemes = ["light", "dark", "colorful"];
+
+      const syncButtons = (theme) => {
+        const buttons = document.querySelectorAll("[data-theme-option]");
+        buttons.forEach((button) => {
+          const option = button.getAttribute("data-theme-option");
+          button.setAttribute("aria-pressed", option === theme ? "true" : "false");
+        });
+      };
+
+      const applyTheme = (theme) => {
+        const selectedTheme = validThemes.includes(theme) ? theme : "light";
+        document.documentElement.setAttribute("data-theme", selectedTheme);
+        window.localStorage.setItem("site-theme", selectedTheme);
+        syncButtons(selectedTheme);
+      };
+
+      const initThemeToggle = () => {
+        const currentTheme = document.documentElement.getAttribute("data-theme") ?? "light";
+        syncButtons(currentTheme);
+
+        const buttons = document.querySelectorAll("[data-theme-option]");
+        buttons.forEach((button) => {
+          if (button.dataset.boundTheme === "true") {
+            return;
+          }
+
+          button.dataset.boundTheme = "true";
+          button.addEventListener("click", () => {
+            const nextTheme = button.getAttribute("data-theme-option") ?? "light";
+            applyTheme(nextTheme);
+          });
+        });
+      };
+
+      initThemeToggle();
+      document.addEventListener("astro:page-load", initThemeToggle);
+    })();
+  </script>
 </BaseLayout>

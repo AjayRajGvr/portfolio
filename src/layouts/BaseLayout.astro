@@ -69,6 +69,15 @@ const themeStyle = [
     <meta name="twitter:description" content={description} />
     {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
 
+    <script is:inline>
+      (() => {
+        const validThemes = ["light", "dark", "colorful"];
+        const savedTheme = window.localStorage.getItem("site-theme");
+        const theme = validThemes.includes(savedTheme ?? "") ? savedTheme : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+
     <ClientRouter fallback="animate" />
 
   </head>

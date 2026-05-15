@@ -150,6 +150,7 @@ a {
 }
 
 .theme-toggle button {
+  position: relative;
   border: 0;
   border-radius: 999px;
   width: 2rem;
@@ -163,6 +164,27 @@ a {
   letter-spacing: 0.02em;
   cursor: pointer;
   transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.theme-toggle button[data-tooltip]:hover::after,
+.theme-toggle button[data-tooltip]:focus-visible::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 0.45rem);
+  transform: translateX(-50%);
+  width: min(260px, 70vw);
+  padding: 0.5rem 0.65rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.74rem;
+  line-height: 1.35;
+  text-align: center;
+  z-index: 30;
+  box-shadow: var(--shadow-sm);
+  pointer-events: none;
 }
 
 .theme-toggle button[aria-pressed="true"] {

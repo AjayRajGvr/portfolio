@@ -568,6 +568,15 @@ main .reveal:nth-of-type(5) {
     justify-content: space-between;
   }
 
+  .theme-toggle button[data-tooltip]:hover::after,
+  .theme-toggle button[data-tooltip]:focus-visible::after {
+    left: auto;
+    right: 0;
+    transform: none;
+    width: min(250px, 85vw);
+    text-align: left;
+  }
+
   .container {
     padding-top: var(--space-6);
   }

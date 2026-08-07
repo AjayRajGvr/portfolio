@@ -458,26 +458,6 @@ html[data-theme="colorful"] .card strong {
   color: #fd3b0c;
 }
 
-html[data-theme="colorful"] #projects .card:nth-child(2n) {
-  background: #ffeb6d;
-}
-
-html[data-theme="colorful"] #projects .card:nth-child(3n) {
-  background: #fd3b0c;
-}
-
-html[data-theme="colorful"] #projects .card:nth-child(4n) {
-  background: #90c088;
-}
-
-html[data-theme="colorful"] #projects .card:nth-child(3n) {
-  color: #ffffff;
-}
-
-html[data-theme="colorful"] #projects .card:nth-child(3n) .chip {
-  color: #6b3c22;
-}
-
 html[data-theme="colorful"] .chip {
   border-width: 2px;
   background: #ffeb6d;

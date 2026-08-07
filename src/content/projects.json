@@ -2,10 +2,13 @@
   {
     "slug": "surrey-happy-hour",
     "title": "Surrey Happy Hour (Local Menu Search Platform)",
-    "problem": "Surrey diners need a faster way to compare menu prices and find happy-hour options that are available right now.",
-    "solution": "Built and deployed a Next.js/PostgreSQL application that searches 2,300+ menu items across 100+ Surrey restaurants and ranks results by price and real-time happy-hour availability. Developed structured data-ingestion and admin-review workflows and deployed the containerized platform on Oracle Cloud with Docker and Caddy.",
+    "highlights": [
+      "Built and deployed a local search platform covering 2,300+ menu items across 100+ Surrey restaurants.",
+      "Implemented search and ranking based on menu price and current happy-hour availability.",
+      "Developed structured data-ingestion and admin-review workflows for maintaining restaurant and menu information.",
+      "Containerized and deployed the application on Oracle Cloud using Docker and Caddy."
+    ],
     "stack": ["Next.js", "TypeScript", "PostgreSQL", "Drizzle ORM", "Docker", "Caddy", "Oracle Cloud"],
-    "result": "Created a single local search experience for comparing Surrey restaurant menu prices and currently available happy-hour deals.",
     "links": [
       {
         "label": "Visit SurreyHappyHour.ca",
@@ -16,10 +19,13 @@
   {
     "slug": "unsigned",
     "title": "UnSigned (Anonymous Messaging Platform)",
-    "problem": "Users need a simple way to share personalized links and receive anonymous feedback or messages.",
-    "solution": "Built a web application with a customizable admin dashboard, user management, moderation controls, and multi-language support.",
-    "stack": ["TypeScript", "Next.js", "PostgreSQL", "Oracle Cloud"],
-    "result": "Renamed and deployed the platform as UnSigned on its own domain.",
+    "highlights": [
+      "Built a platform where users can share personalized links and receive anonymous feedback and messages.",
+      "Developed a customizable admin dashboard with user-management and moderation controls.",
+      "Added customizable UI options and multi-language support.",
+      "Deployed the application publicly at UnSigned.ca using Oracle Cloud."
+    ],
+    "stack": ["Next.js", "TypeScript", "PostgreSQL", "Oracle Cloud"],
     "links": [
       {
         "label": "Visit UnSigned.ca",
@@ -30,9 +36,11 @@
   {
     "slug": "minimal-ytube",
     "title": "Minimal YTube (Chrome Extension)",
-    "problem": "YouTube pages can be distraction-heavy and reduce focus on the currently playing video.",
-    "solution": "Built a Chrome extension to remove non-essential YouTube fields and keep attention on active content.",
-    "stack": ["JavaScript", "Chrome Extension"],
-    "result": "Created a focused viewing experience by minimizing visual distractions."
+    "highlights": [
+      "Built a Chrome extension that removes non-essential elements from YouTube pages.",
+      "Designed the experience to keep users focused on the currently playing video.",
+      "Created a minimal viewing interface that reduces visual distractions."
+    ],
+    "stack": ["JavaScript", "Chrome Extension"]
   }
 ]

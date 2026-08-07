@@ -42,10 +42,8 @@ export type SiteConfig = {
 export type ProjectCard = {
   slug: string;
   title: string;
-  problem: string;
-  solution: string;
+  highlights: string[];
   stack: string[];
-  result: string;
   links?: Array<{
     label: string;
     href: string;

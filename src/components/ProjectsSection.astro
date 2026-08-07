@@ -34,7 +34,9 @@ const featured = items.slice(0, 3);
             {
               project.links && project.links.length > 0 && (
                 <p class="link-row">
-                  {project.links.map((link) => <a href={link.href}>{link.label}</a>)}
+                  {project.links.map((link) => (
+                    <a href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+                  ))}
                 </p>
               )
             }

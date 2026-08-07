@@ -1,18 +1,38 @@
 [
   {
+    "slug": "surrey-happy-hour",
+    "title": "Surrey Happy Hour (Local Menu Search Platform)",
+    "problem": "Surrey diners need a faster way to compare menu prices and find happy-hour options that are available right now.",
+    "solution": "Built and deployed a Next.js/PostgreSQL application that searches 2,300+ menu items across 100+ Surrey restaurants and ranks results by price and real-time happy-hour availability. Developed structured data-ingestion and admin-review workflows and deployed the containerized platform on Oracle Cloud with Docker and Caddy.",
+    "stack": ["Next.js", "TypeScript", "PostgreSQL", "Drizzle ORM", "Docker", "Caddy", "Oracle Cloud"],
+    "result": "Created a single local search experience for comparing Surrey restaurant menu prices and currently available happy-hour deals.",
+    "links": [
+      {
+        "label": "Visit SurreyHappyHour.ca",
+        "href": "https://surreyhappyhour.ca/"
+      }
+    ]
+  },
+  {
+    "slug": "unsigned",
+    "title": "UnSigned (Anonymous Messaging Platform)",
+    "problem": "Users need a simple way to share personalized links and receive anonymous feedback or messages.",
+    "solution": "Built a web application with a customizable admin dashboard, user management, moderation controls, and multi-language support.",
+    "stack": ["TypeScript", "Next.js", "PostgreSQL", "Oracle Cloud"],
+    "result": "Renamed and deployed the platform as UnSigned on its own domain.",
+    "links": [
+      {
+        "label": "Visit UnSigned.ca",
+        "href": "https://unsigned.ca"
+      }
+    ]
+  },
+  {
     "slug": "minimal-ytube",
     "title": "Minimal YTube (Chrome Extension)",
     "problem": "YouTube pages can be distraction-heavy and reduce focus on the currently playing video.",
     "solution": "Built a Chrome extension to remove non-essential YouTube fields and keep attention on active content.",
     "stack": ["JavaScript", "Chrome Extension"],
     "result": "Created a focused viewing experience by minimizing visual distractions."
-  },
-  {
-    "slug": "secret-share",
-    "title": "Secret Share (Anonymous Messaging Platform)",
-    "problem": "Client needed a way to receive candid feedback through personalized links.",
-    "solution": "Built a web app for anonymous feedback with an admin dashboard, moderation controls, and multi-language support.",
-    "stack": ["JavaScript", "Next.js", "PostgreSQL"],
-    "result": "Enabled anonymous messaging workflows with manageable moderation and customizable admin controls."
   }
 ]

@@ -8,14 +8,6 @@ type Props = {
   ogImage?: string;
   siteName: string;
   titleTemplate?: string;
-  theme: {
-    accent: string;
-    bg: string;
-    surface: string;
-    text: string;
-    textMuted: string;
-    border: string;
-  };
 };
 
 const {
@@ -24,7 +16,6 @@ const {
   ogImage,
   siteName,
   titleTemplate = "%s",
-  theme,
 } = Astro.props;
 
 const resolvedTitle = pageTitle ?? siteName;
@@ -34,14 +25,6 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toStri
 const ogImageUrl = ogImage
   ? new URL(ogImage, Astro.site ?? Astro.url).toString()
   : undefined;
-const themeStyle = [
-  `--accent:${theme.accent}`,
-  `--bg:${theme.bg}`,
-  `--surface:${theme.surface}`,
-  `--text:${theme.text}`,
-  `--textMuted:${theme.textMuted}`,
-  `--border:${theme.border}`,
-].join(";");
 ---
 
 <!doctype html>
@@ -71,17 +54,25 @@ const themeStyle = [
 
     <script is:inline>
       (() => {
-        const validThemes = ["light", "dark", "colorful"];
+        const validThemes = ["day", "sunset", "night"];
+        const legacyThemes = {
+          light: "day",
+          colorful: "sunset",
+          dark: "night",
+        };
         const savedTheme = window.localStorage.getItem("site-theme");
-        const theme = validThemes.includes(savedTheme ?? "") ? savedTheme : "light";
+        const theme = validThemes.includes(savedTheme ?? "")
+          ? savedTheme
+          : legacyThemes[savedTheme] ?? "day";
         document.documentElement.setAttribute("data-theme", theme);
+        window.localStorage.setItem("site-theme", theme);
       })();
     </script>
 
     <ClientRouter fallback="animate" />
 
   </head>
-  <body style={themeStyle}>
+  <body>
     <slot />
   </body>
 </html>

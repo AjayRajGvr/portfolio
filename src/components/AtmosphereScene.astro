@@ -1,0 +1,49 @@
+---
+const base = import.meta.env.BASE_URL;
+
+function asset(path: string) {
+  const normalizedBase = base.endsWith("/") ? base.slice(0, -1) : base;
+  return `${normalizedBase}${path}`;
+}
+---
+
+<div class="atmosphere" aria-hidden="true">
+  <div
+    class="scene-layer scene-day"
+    style={`background-image: url('${asset("/images/atmosphere/vancouver-day.webp")}')`}
+  ></div>
+  <div
+    class="scene-layer scene-sunset"
+    style={`background-image: url('${asset("/images/atmosphere/vancouver-sunset.webp")}')`}
+  ></div>
+  <div
+    class="scene-layer scene-night"
+    style={`background-image: url('${asset("/images/atmosphere/vancouver-night.webp")}')`}
+  ></div>
+  <div class="scene-wash"></div>
+
+  <div class="sun-orb"></div>
+  <div class="moon-orb"></div>
+
+  <img class="drift-cloud cloud-one" src={asset("/images/atmosphere/cloud.webp")} alt="" />
+  <img class="drift-cloud cloud-two" src={asset("/images/atmosphere/cloud.webp")} alt="" />
+  <img class="drift-cloud cloud-three" src={asset("/images/atmosphere/cloud.webp")} alt="" />
+
+  <div class="plane-runner">
+    <span class="contrail"></span>
+    <img src={asset("/images/atmosphere/plane.webp")} alt="" />
+  </div>
+
+  <div class="bird-runner">
+    <img src={asset("/images/atmosphere/birds.webp")} alt="" />
+  </div>
+
+  <div class="ship-runner">
+    <img src={asset("/images/atmosphere/ferry.webp")} alt="" />
+  </div>
+
+  <div class="shooting-star"></div>
+  <div class="twinkle twinkle-one"></div>
+  <div class="twinkle twinkle-two"></div>
+  <div class="twinkle twinkle-three"></div>
+</div>

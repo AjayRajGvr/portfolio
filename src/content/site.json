@@ -7,11 +7,6 @@
   "website": "https://ajayraj.ca",
   "ctaLinks": [
     {
-      "label": "View Resume",
-      "href": "/Ajay-Raj-Resume.pdf",
-      "variant": "secondary"
-    },
-    {
       "label": "Contact",
       "href": "#contact",
       "variant": "secondary"

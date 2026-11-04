@@ -21,7 +21,10 @@ const {
 const resolvedTitle = pageTitle ?? siteName;
 const title = titleTemplate.replace("%s", resolvedTitle);
 const description = pageDescription ?? "";
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString();
+const canonicalUrl = new URL(
+  Astro.url.pathname,
+  Astro.site ?? Astro.url,
+).toString();
 const ogImageUrl = ogImage
   ? new URL(ogImage, Astro.site ?? Astro.url).toString()
   : undefined;
@@ -63,16 +66,20 @@ const ogImageUrl = ogImage
         const savedTheme = window.localStorage.getItem("site-theme");
         const theme = validThemes.includes(savedTheme ?? "")
           ? savedTheme
-          : legacyThemes[savedTheme] ?? "day";
+          : (legacyThemes[savedTheme] ?? "day");
         document.documentElement.setAttribute("data-theme", theme);
         window.localStorage.setItem("site-theme", theme);
       })();
     </script>
 
     <ClientRouter fallback="animate" />
-
   </head>
   <body>
     <slot />
+    <script
+      src="https://aichat.ajayraj.ca/widget.js"
+      data-chatbot="d65d7ca0-5f5b-413b-941b-2b279b00db17"
+      data-token="gw_embed_35cbbcbdcb1c69de36a0461d24a1cc723bbfba3b5c5e42249a784319936be38c"
+      defer></script>
   </body>
 </html>
